@@ -1,0 +1,50 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+@import './components/gym-list-elements.scss';
+@import './components/map-container.scss';
+
+body {
+  font-family: "Merriweather", serif;
+  font-size: 0.8;
+}
+
+.bg_primary-color {
+  background-color: #FFFFFF;
+}
+.primary-color {
+  background-color: #FFFFFF;
+}
+.bg_secondary-color {
+  background-color: #293241;
+}
+.secondary-color {
+  color: #293241;
+}
+.custom-button.btn {
+  background-color: #293241;
+  color: #FFF;
+  border: none;
+}
+.hero {
+  width: 100vw;
+  height: 50vh;
+}
+.hero img {
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+  width: 100%;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
