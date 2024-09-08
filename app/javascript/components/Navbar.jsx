@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <div className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between bg-dark">
         <a href="">
-          <h3>Gyms</h3>
+          <h3>Gymssss</h3>
         </a>
         <form className="form-inline my-2 my-lg-0 d-flex">
           <input
