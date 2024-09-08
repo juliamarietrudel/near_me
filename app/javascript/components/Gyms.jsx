@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import GymListItem from "./GymListItem";
 
 const Gyms = () => {
   const navigate = useNavigate();
@@ -18,23 +19,20 @@ const Gyms = () => {
       .catch(() => navigate("/"));
   }, []);
 
-  const allGyms = gyms.map((gym, index) => (
-    <div key={index} className="index-card-margin">
-      <div className="index-card">
-        <Link to={`/gyms/${gym.id}`}>
-          <h6 className="card-title-small">{gym.name}</h6>
-          <p className="card-text-grey">{gym.address}</p>
-        </Link>
-        <hr />
-      </div>
-    </div>
+  const allGyms = gyms.map((gym) => (
+    <GymListItem
+      key={gym.id}
+      name={gym.name}
+      address={gym.address}
+      id={gym.id}
+    />
   ));
 
   return (
     <>
       <div className="text-center">
         <div className="container py-5">
-          <h3 className="">Gyms in your area</h3>
+          <h3>Gyms in your area</h3>
         </div>
       </div>
       <div className="container py-5">
