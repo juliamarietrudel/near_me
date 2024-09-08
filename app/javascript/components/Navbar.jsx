@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between bg-dark">
+      <div className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
         <a href="">
-          <h3>Gyms</h3>
+          <h3>Mapbox branche</h3>
         </a>
         <form className="form-inline my-2 my-lg-0 d-flex">
           <input
