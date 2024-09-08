@@ -1,0 +1,29 @@
+.navbar {
+  padding: 1rem;
+}
+
+.navbar h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.short-input {
+  width: 50%;
+  border: 1px solid rgb(158, 157, 157);
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+}
+
+.btn-search {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid rgb(158, 157, 157);
+  padding: 0.2rem 0.6rem;
+  margin-left: 1rem;
+  color: rgb(158, 157, 157);
+}
+
+.search-form {
+  display: flex;
+  justify-content: end;
+}
