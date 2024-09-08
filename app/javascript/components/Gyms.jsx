@@ -19,11 +19,11 @@ const Gyms = () => {
   }, []);
 
   const allGyms = gyms.map((gym, index) => (
-    <div key={index}>
+    <div key={index} className="index-card-margin">
       <div className="index-card">
         <Link to={`/gyms/${gym.id}`}>
-          <h6>{gym.name}</h6>
-          <p className="text-grey">{gym.address}</p>
+          <h6 className="card-title-small">{gym.name}</h6>
+          <p className="card-text-grey">{gym.address}</p>
         </Link>
         <hr />
       </div>

@@ -1,17 +1,21 @@
-.text-grey {
+.card-text-grey {
   color: rgb(73, 73, 73);
   font-style: italic;
   font-size: 0.7rem;
+}
+
+.card-title-small {
+  font-size: 0.9rem;
 }
 
 .index-card {
   margin-bottom: 10px;
 }
 
-.red {
-  background-color: red;
+.index-card-margin {
+  margin-top: 2rem;
 }
 
-.green {
-  background-color: green;
+.index-card-margin:first-child {
+  margin-top: 0;
 }
