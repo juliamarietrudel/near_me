@@ -9,12 +9,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 .navbar h3 {
-  font-size: 1.2rem;
+  font-size: $title-small;
   margin: 0;
   color: $main-grey;
 }
 
-.short-input {
+.search-input {
   color: $light-grey;
   background-color: transparent;
   border: none;
@@ -22,11 +22,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   padding: 0;
 }
 
-.short-input:focus {
+.search-input:focus {
   outline: none;
 }
 
-.short-input::placeholder {
+.search-input::placeholder {
   color: rgb(209, 207, 207);
 }
 

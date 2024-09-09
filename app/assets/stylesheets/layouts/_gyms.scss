@@ -1,0 +1,51 @@
+// Variables
+$container-max-width: 1200px;
+$spacing-unit: 1rem;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+// Styles
+.gyms-layout {
+  .header {
+    text-align: center;
+    padding: $spacing-unit * 5 0;
+
+    h3 {
+      margin: 0;
+      font-size: $title-big;
+    }
+  }
+
+  .content {
+    @include container;
+    // padding: $spacing-unit * 5 0;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .gym-list {
+      width: 30%;
+    }
+
+    .map-container {
+      width: 50%;
+      background-image: url('map_img.jpeg');
+      background-size: contain;
+      filter: saturate(0);
+    }
+  }
+}

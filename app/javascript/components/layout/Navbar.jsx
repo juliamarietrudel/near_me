@@ -26,7 +26,7 @@ const Navbar = () => {
             {isSearchVisible && (
               <input
                 ref={inputRef}
-                className="short-input"
+                className="search-input"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"

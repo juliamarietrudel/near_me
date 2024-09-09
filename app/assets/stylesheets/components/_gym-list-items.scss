@@ -23,13 +23,13 @@
 
   &__name {
     color: $dark-grey;
-    font-size: 0.9rem;
+    font-size: $main;
   }
 
   &__address {
     color: $dark-grey;
     font-style: italic;
-    font-size: 0.7rem;
+    font-size: $small;
     margin: 0;
     margin-bottom: 1rem;
   }

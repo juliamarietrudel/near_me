@@ -29,19 +29,17 @@ const Gyms = () => {
   ));
 
   return (
-    <>
-      <div className="text-center">
-        <div className="container py-5">
-          <h3>Gyms in your area</h3>
+    <div className="gyms-layout">
+      <div className="header">
+        <h3>Gyms in your area</h3>
+      </div>
+      <div className="content">
+        <div className="row">
+          <div className="gym-list">{allGyms}</div>
+          <div className="map-container"></div>
         </div>
       </div>
-      <div className="container py-5">
-        <div className="row d-flex justify-content-between">
-          <div className="col-3">{allGyms}</div>
-          <div className="col-7 map-container"></div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

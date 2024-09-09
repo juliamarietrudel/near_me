@@ -1,16 +1,25 @@
+// bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+// google font
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
+// abstracts
 @import './abstracts/colors.scss';
+@import './abstracts/fonts.scss';
+
+// components
 @import './components/gym-list-items.scss';
 @import './components/map-container.scss';
+
+// layouts
 @import './layouts/navbar.scss';
+@import './layouts/gyms.scss';
 
 body {
   font-family: "Merriweather", serif;
-  font-size: 0.8;
+  // font-size: 0.8;
 }
 
 .bg_primary-color {
