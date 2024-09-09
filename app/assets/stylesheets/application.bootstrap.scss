@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
 @import './abstracts/colors.scss';
-@import './components/gym-list-elements.scss';
+@import './components/gym-list-items.scss';
 @import './components/map-container.scss';
 @import './layouts/navbar.scss';
 
@@ -52,5 +52,5 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $dark-grey;
+  color: $very-dark-grey;
 }

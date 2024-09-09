@@ -17,7 +17,6 @@ const Navbar = () => {
   });
   return (
     <>
-
       <div className="navbar navbar-expand-lg d-flex justify-content-between">
         <div className="container">
           <a href="">
@@ -38,7 +37,6 @@ const Navbar = () => {
             </button>
           </form>
         </div>
-
       </div>
     </>
   );
