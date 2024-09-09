@@ -32,7 +32,7 @@ const Gyms = () => {
     <>
       <div className="text-center">
         <div className="container py-5">
-          <h3>Gyms in your areas</h3>
+          <h3>Gyms in your area</h3>
         </div>
       </div>
       <div className="container py-5">
