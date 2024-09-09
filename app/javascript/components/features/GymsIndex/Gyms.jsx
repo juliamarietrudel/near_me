@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GymListItem from "./GymListItem";
+import GymMap from "../GymsMap/GymMap";
 
 const Gyms = () => {
   const navigate = useNavigate();
@@ -36,7 +37,9 @@ const Gyms = () => {
       <div className="content">
         <div className="row">
           <div className="gym-list">{allGyms}</div>
-          <div className="map-container"></div>
+          <div className="map-container">
+            <GymMap />
+          </div>
         </div>
       </div>
     </div>
