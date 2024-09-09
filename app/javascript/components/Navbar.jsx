@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState();
+  const inputRef = useRef(null);
+
+  const toggleSearch = (e) => {
+    e.preventDefault();
+    setIsSearchVisible(!isSearchVisible);
+  };
+
+  useEffect(() => {
+    if (isSearchVisible) {
+      inputRef.current.focus();
+    }
+  });
   return (
     <>
-      <div className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
-        <a href="">
-          <h3>Mapbox branche</h3>
-        </a>
-        <form className="form-inline my-2 my-lg-0 d-flex">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
+      <div className="navbar navbar-expand-lg d-flex justify-content-between">
+        <div className="container">
+          <a href="">
+            <h3>NearMe</h3>
+          </a>
+          <form className="search-form">
+            {isSearchVisible && (
+              <input
+                ref={inputRef}
+                className="short-input"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            )}
+            <button className="btn-search" type="submit" onClick={toggleSearch}>
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

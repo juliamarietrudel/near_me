@@ -1,0 +1,36 @@
+.gym-item {
+
+  &__container {
+    padding: 1rem 1.5rem 0 1.5rem;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.1s ease;
+
+    &:hover {
+      .gym-item__name,
+      .gym-item__address {
+        color: $main-black;
+      }
+
+      .gym-item__content {
+        border-color: $main-black;
+      }
+    }
+  }
+
+  &__content {
+    border-bottom: 1px solid $main-grey;
+  }
+
+  &__name {
+    color: $dark-grey;
+    font-size: 0.9rem;
+  }
+
+  &__address {
+    color: $dark-grey;
+    font-style: italic;
+    font-size: 0.7rem;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
