@@ -29,21 +29,7 @@ const Gyms = () => {
     />
   ));
 
-  return (
-    <div className="gyms-layout">
-      <div className="header">
-        <h3>Gyms in your area</h3>
-      </div>
-      <div className="content">
-        <div className="row">
-          <div className="gym-list">{allGyms}</div>
-          <div className="map-container">
-            <GymMap />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <div>{allGyms}</div>;
 };
 
 export default Gyms;

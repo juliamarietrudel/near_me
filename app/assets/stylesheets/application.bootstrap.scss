@@ -16,6 +16,7 @@
 // layouts
 @import './layouts/navbar.scss';
 @import './layouts/gyms.scss';
+@import './layouts/home.scss';
 
 body {
   font-family: "Merriweather", serif;
@@ -57,7 +58,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: $main-black;
 }
 
 h1, h2, h3, h4, h5, h6 {

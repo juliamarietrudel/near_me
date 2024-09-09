@@ -1,5 +1,7 @@
 import React from "react";
 
-const Gym = () => {};
+const Show = () => {
+  console.log("show page");
+};
 
-export default Gym;
+export default Show;
