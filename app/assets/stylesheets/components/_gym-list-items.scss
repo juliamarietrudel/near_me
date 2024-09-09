@@ -17,6 +17,10 @@
     }
   }
 
+  &:first {
+    padding-top: 0;
+  }
+
   &__content {
     border-bottom: 1px solid $main-grey;
   }

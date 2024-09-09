@@ -29,7 +29,7 @@ const Gyms = () => {
     />
   ));
 
-  return <div>{allGyms}</div>;
+  return <>{allGyms}</>;
 };
 
 export default Gyms;

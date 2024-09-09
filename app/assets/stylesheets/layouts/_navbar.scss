@@ -13,10 +13,12 @@ $title-small: 1.5rem;    // Adjust this value to match your design
 
 // Styles
 .main-nav {
-  padding: 1rem;
+  height: 3.5rem;
   background-color: $main-bg-grey;
   position: fixed;
   width: 100%;
+  display: flex;
+  align-items: center;
 
   &__container {
     display: flex;

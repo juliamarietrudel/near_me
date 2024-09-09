@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_160415) do
   enable_extension "plpgsql"
 
   create_table "gyms", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+    t.string "name", null: false
+    t.string "address", null: false
     t.text "description"
     t.integer "rating"
     t.float "latitude"
