@@ -10,7 +10,8 @@ class Api::V1::GymsController < ApplicationController
   end
 
   def search
-    gyms = Gym.search(params[:query])
+    query = params[:query]
+    gyms = Gym.search(query)
     render json: gyms
   end
 end

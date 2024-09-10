@@ -95,3 +95,32 @@ $title-small: 1.5rem;    // Adjust this value to match your design
     }
   }
 }
+
+.main-nav__search-container {
+  position: relative;
+}
+
+.main-nav__search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.main-nav__search-results li {
+  text-align: right;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.main-nav__search-results li:hover {
+  background-color: #f0f0f0;
+}
