@@ -19,6 +19,7 @@ $title-small: 1.5rem;    // Adjust this value to match your design
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: 2;
 
   &__container {
     display: flex;
@@ -40,6 +41,7 @@ $title-small: 1.5rem;    // Adjust this value to match your design
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
   }
 
   &__search-input {
@@ -48,6 +50,7 @@ $title-small: 1.5rem;    // Adjust this value to match your design
     border: none;
     text-align: right;
     padding: 0;
+    padding: 0.8rem;
 
     &:focus {
       outline: none;
@@ -71,12 +74,24 @@ $title-small: 1.5rem;    // Adjust this value to match your design
     background-color: transparent;
     border: none;
     color: rgb(158, 157, 157);
-    padding: 0.2rem 0.2rem 0.2rem 1rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
     cursor: pointer;
     transition: color 0.2s ease;
+    position: relative;
+    z-index: 1;
 
     &:hover {
       color: $very-dark-grey;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      z-index: -1;
     }
   }
 }
