@@ -1,8 +1,6 @@
 class Gym < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :address, presence: true
 
-  def self.search(query)
-    where("name LIKE ?", "%#{query}%")
-  end
+  scope :search_by_name, ->(query) { where("name ILIKE ?", "#{query}%") }
 end
