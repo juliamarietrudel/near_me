@@ -5,8 +5,9 @@ class Api::V1::GymsController < ApplicationController
   end
 
   def show
-    gym = Gym.find(params[:id])
-    render json: gym
+    gym = Gym.includes(:reviews).find(params[:id])
+    render json: gym.as_json(include: :reviews)
+
   end
 
   def search

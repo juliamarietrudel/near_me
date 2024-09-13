@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GymsLayout from "./GymsLayout";
-import GymListItem from "./GymListItem";
+import GymsLayout from "../layout/GymsLayout";
+import GymsList from "../features/GymsIndex/GymsList";
 import GymMap from "../features/GymsMap/GymMap";
 
 const Index = () => {
@@ -28,30 +28,16 @@ const Index = () => {
     setSearchTerm(event.target.value);
   };
 
-  const GymsList = () => (
-    <div>
-      <input
-        type="text"
-        placeholder="Search gyms..."
-        value={searchTerm}
-        onChange={handleSearch}
-        className="w-full p-2 mb-4 border rounded"
-      />
-      {filteredGyms.map((gym) => (
-        <GymListItem
-          key={gym.id}
-          name={gym.name}
-          address={gym.address}
-          id={gym.id}
-        />
-      ))}
-    </div>
-  );
-
   return (
     <GymsLayout
       title="Gyms in your area"
-      listComponent={<GymsList />}
+      listComponent={
+        <GymsList
+          searchTerm={searchTerm}
+          handleSearch={handleSearch}
+          gyms={filteredGyms}
+        />
+      }
       mapComponent={<GymMap gyms={filteredGyms} />}
     />
   );

@@ -18,6 +18,10 @@
 @import './layouts/gyms.scss';
 @import './layouts/home.scss';
 
+.bg-green {
+background-color: green;
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;

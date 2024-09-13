@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const SearchForm = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const inputRef = useRef(null);
@@ -13,17 +14,13 @@ const SearchForm = () => {
       setSearchResults([]);
       return;
     }
-
     try {
       const url = `/api/v1/gyms/search?query=${query}`;
       const response = await fetch(url);
-      console.log("response", response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
       const data = await response.json();
-      console.log("data:", data);
       setSearchResults(data);
     } catch (error) {
       console.error("Error fetching search results:", error);
@@ -32,50 +29,47 @@ const SearchForm = () => {
   };
 
   const handleInputChange = (e) => {
-    // console.log("Handling input change");
     const query = e.target.value;
-    console.log("query", query);
     setSearchQuery(query);
     fetchSearchResults(query);
   };
 
   const toggleVisibility = () => {
-    if (searchQuery !== "") {
-      console.log("...searching");
+    if (searchQuery !== "" || isVisible) {
       if (inputRef.current) {
         inputRef.current.focus();
       }
     } else {
-      setIsVisible(!isVisible);
+      setIsVisible(true);
     }
   };
 
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
   useEffect(() => {
-    // console.log(`Is now ${isVisible}`);
-    // console.log(inputRef.current);
     if (inputRef.current && isVisible) {
       inputRef.current.focus();
     }
 
     const handleDocumentClick = (event) => {
-      if (isVisible) {
-        // console.log("clicks");
-        if (searchQuery === "" && !formRef.current.contains(event.target)) {
+      if (!formRef.current.contains(event.target)) {
+        if (searchQuery === "") {
           setIsVisible(false);
         }
       }
     };
 
     document.addEventListener("click", handleDocumentClick);
-
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     };
   }, [isVisible, searchQuery]);
-
-  useEffect(() => {
-    // console.log(`Input field value is: ${searchQuery}`);
-  }, [searchQuery]);
 
   return (
     <form className="main-nav__search-form" ref={formRef}>
@@ -88,9 +82,11 @@ const SearchForm = () => {
           aria-label="Search"
           value={searchQuery}
           onChange={handleInputChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           style={{ display: isVisible ? "block" : "none" }}
         />
-        {isVisible && searchQuery.length > 0 && (
+        {isFocused && searchQuery.length > 0 && (
           <ul className="main-nav__search-results">
             {searchResults.length > 0 ? (
               searchResults.map((gym) => (

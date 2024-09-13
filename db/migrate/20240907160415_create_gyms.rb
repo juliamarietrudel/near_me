@@ -4,7 +4,6 @@ class CreateGyms < ActiveRecord::Migration[7.2]
       t.string :name, null: false
       t.string :address, null: false
       t.text :description
-      t.integer :rating
       t.float :latitude
       t.float :longitude
 

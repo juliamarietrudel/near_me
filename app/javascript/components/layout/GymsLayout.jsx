@@ -16,4 +16,4 @@ const GymsLayout = ({ title, listComponent, mapComponent }) => {
   );
 };
 
-export default GymsMap;
+export default GymsLayout;

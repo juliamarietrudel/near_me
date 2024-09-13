@@ -21,12 +21,14 @@ const Gyms = () => {
   }, []);
 
   const allGyms = gyms.map((gym) => (
-    <GymListItem
-      key={gym.id}
-      name={gym.name}
-      address={gym.address}
-      id={gym.id}
-    />
+    <Link to={`/gyms/${gym.id}`} className="gym-item">
+      <GymListItem
+        key={gym.id}
+        name={gym.name}
+        address={gym.address}
+        id={gym.id}
+      />
+    </Link>
   ));
 
   return <>{allGyms}</>;
