@@ -28,21 +28,28 @@ const Show = () => {
 
   const GymDetails = () => {
     return (
-      <>
-        <GymListItem
-          name={gym.name}
-          address={gym.address}
-          description={gym.description}
-        />
-        <GymReviews gym={gym} />
-      </>
+      <div className="content-list">
+        <div className="content-list__search smaller-container">
+          <GymListItem
+            name={gym.name}
+            address={gym.address}
+            description={gym.description}
+          />
+        </div>
+        <div className="content-list__items-wrapper">
+          <div className="content-list__items">
+            <GymReviews gym={gym} />
+          </div>
+        </div>
+      </div>
     );
   };
+
   return (
     <>
       <GymsLayout
-        title={`Details for ${gym.name}`}
-        listComponent={<GymDetails />}
+        // title={`Details for ${gym.name}`}
+        contentComponent={<GymDetails />}
         mapComponent={<GymMap gyms={[gym]} />}
       />
     </>

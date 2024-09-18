@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   root "homepage#index"
   get "*path", to: "homepage#index", constraints: ->(request) { !request.xhr? && request.format.html? }
 end

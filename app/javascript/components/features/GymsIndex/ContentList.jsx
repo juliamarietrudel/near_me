@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GymListItem from "./GymListItem";
 
-const GymsList = ({ searchTerm, handleSearch, gyms }) => (
-  <div className="gyms-list-container">
-    <div className="gyms-list-search">
+const ContentList = ({ searchTerm, handleSearch, gyms }) => (
+  <div className="content-list">
+    <div className="content-list__search">
       <input
         type="text"
         placeholder="Search gyms..."
@@ -13,8 +13,8 @@ const GymsList = ({ searchTerm, handleSearch, gyms }) => (
         className="w-full p-2 border rounded"
       />
     </div>
-    <div className="gyms-list-items-wrapper">
-      <div className="gyms-list-items">
+    <div className="content-list__items-wrapper">
+      <div className="content-list__items">
         {gyms.map((gym) => (
           <Link key={gym.id} to={`/gyms/${gym.id}`} className="gym-item">
             <GymListItem name={gym.name} address={gym.address} />
@@ -25,4 +25,4 @@ const GymsList = ({ searchTerm, handleSearch, gyms }) => (
   </div>
 );
 
-export default GymsList;
+export default ContentList;

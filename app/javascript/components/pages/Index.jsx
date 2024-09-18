@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GymsLayout from "../layout/GymsLayout";
-import GymsList from "../features/GymsIndex/GymsList";
+import ContentList from "../features/GymsIndex/ContentList";
 import GymMap from "../features/GymsMap/GymMap";
 
 const Index = () => {
@@ -30,9 +30,9 @@ const Index = () => {
 
   return (
     <GymsLayout
-      title="Gyms in your area"
-      listComponent={
-        <GymsList
+      // title="Gyms in your area"
+      contentComponent={
+        <ContentList
           searchTerm={searchTerm}
           handleSearch={handleSearch}
           gyms={filteredGyms}
