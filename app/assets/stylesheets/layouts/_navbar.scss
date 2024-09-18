@@ -14,7 +14,7 @@ $title-small: 1.5rem;    // Adjust this value to match your design
 // Styles
 .main-nav {
   height: 3.5rem;
-  background-color: $main-bg-grey;
+  // background-color: $main-bg-grey;
   position: fixed;
   width: 100%;
   display: flex;
@@ -29,17 +29,6 @@ $title-small: 1.5rem;    // Adjust this value to match your design
     // max-width: 1200px;
     margin: 0 auto;
     padding: 0 10rem;
-  }
-
-  &__title {
-    font-size: 1rem;
-    margin: 0;
-    color: $light-grey;
-    padding-right: 1rem;
-
-    :hover {
-      color: $very-dark-grey;
-    }
   }
 
   &__search-form {
@@ -131,5 +120,26 @@ $title-small: 1.5rem;    // Adjust this value to match your design
 
   &__title-spacing {
     display: flex;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    .main-nav__title {
+      font-size: 1rem;
+      margin: 0;
+      color: $light-grey;
+      padding-right: 1rem;
+
+      &:hover {
+        color: $very-dark-grey;
+      }
+    }
+
+    &.main-nav__link--active {
+      .main-nav__title {
+        color: $very-dark-grey
+      }
+    }
   }
 }

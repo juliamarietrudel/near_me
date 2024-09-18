@@ -49,7 +49,9 @@ const SearchForm = () => {
   };
 
   const handleBlur = () => {
-    setIsFocused(false);
+    setTimeout(() => {
+      setIsFocused(false);
+    }, 100); // Small delay to let click register before hiding results
   };
 
   useEffect(() => {
@@ -91,7 +93,12 @@ const SearchForm = () => {
             {searchResults.length > 0 ? (
               searchResults.map((gym) => (
                 <li key={gym.id}>
-                  <Link to={`/gyms/${gym.id}`}>{gym.name}</Link>
+                  <Link
+                    to={`/gyms/${gym.id}`}
+                    onMouseDown={(e) => e.preventDefault()}
+                  >
+                    {gym.name}
+                  </Link>
                 </li>
               ))
             ) : (
