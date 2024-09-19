@@ -1,16 +1,37 @@
+// bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+// google font
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
+// abstracts
 @import './abstracts/colors.scss';
+@import './abstracts/fonts.scss';
+
+// components
 @import './components/gym-list-items.scss';
 @import './components/map-container.scss';
+@import './components/content-list.scss';
+
+// layouts
 @import './layouts/navbar.scss';
+@import './layouts/gyms.scss';
+@import './layouts/home.scss';
+
+$search-bar-height: 4rem;
+
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "Merriweather", serif;
-  font-size: 0.8;
+  // font-size: 0.8;
+  // padding-bottom: 3rem;
 }
 
 .bg_primary-color {
@@ -48,9 +69,17 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: $main-black;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $very-dark-grey;
+}
+
+.content-centered {
+  position: relative;
+  // width: 80%;
+  padding: 0 10rem;
+  margin: 0 auto;
+  padding-top: $navbar-height;
 }
