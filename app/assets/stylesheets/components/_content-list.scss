@@ -24,6 +24,7 @@ $search-bar-height: 4rem;
     padding: 0.5rem 0;
     margin-bottom: 2rem;
     background-color: #fff;
+    box-sizing: border-box;
 
     // z-index: 5;
     // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -31,6 +32,7 @@ $search-bar-height: 4rem;
     input {
       height: 100%;
       width: 100%;
+      outline: none;
     }
   }
 
